@@ -1,0 +1,57 @@
+{
+  "task": "Starting kube pod",
+  "query": {
+    "cmd": [
+      "kubectl",
+      "get",
+      "deployments",
+      "--selector=project=mcl"
+    ]
+  },
+  "filter": {
+    "value": [
+      {
+        "type": "arg",
+        "param": 3
+      }
+    ],
+    "column": [
+      {
+        "type": "param",
+        "param": 0
+      }
+    ]
+  },
+  "run_cmd": {
+    "msg_fmt": [
+      "scaling",
+      {
+        "type": "param",
+        "param": 0
+      },
+      "to",
+      {
+        "type": "arg",
+        "param": 2
+      }
+    ],
+    "cmd_fmt": [
+      "kubectl",
+      "scale",
+      {
+        "type": "static",
+        "param": "deployments/",
+        "post_space": false
+      },
+      {
+        "type": "param",
+        "param": 0
+      },
+      "--replicas",
+      {
+        "type": "arg",
+        "param": 2
+      }
+    ]
+  }
+}
