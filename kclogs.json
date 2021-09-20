@@ -1,0 +1,42 @@
+{
+  "task": "Retrieving logs",
+  "query": {
+    "cmd": [
+      "kubectl",
+      "get",
+      "pods",
+      "--selector=project=mcl"
+    ]
+  },
+  "filter": {
+    "value": [
+      {
+        "type": "arg",
+        "param": 2
+      }
+    ],
+    "column": [
+      {
+        "type": "param",
+        "param": 0
+      }
+    ]
+  },
+  "run_cmd": {
+    "msg_fmt": [
+      "logs for",
+      {
+        "type": "param",
+        "param": 0
+      }
+    ],
+    "cmd_fmt": [
+      "kubectl",
+      "logs",
+      {
+        "type": "param",
+        "param": 0
+      }
+    ]
+  }
+}
