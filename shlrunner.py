@@ -7,6 +7,8 @@ import sys
 import os
 import signal
 
+last_cmd = 'ish_last_cmd'
+
 
 def signal_handler(_sig, _frame):
     print("")
@@ -94,7 +96,11 @@ def run_command(entry, command_params):
 
     cmd = resolve_format(entry, cmd_fmt)
     print("Executing " + cmd)
+
     subprocess.call(cmd.split(' '))
+
+    with open(last_cmd, 'w') as ish_last:
+        ish_last.write(cmd)
 
 
 def filter_entry(entry, runner_config):
