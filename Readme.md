@@ -1,6 +1,26 @@
 ### Interactive Shell Runner
 
-#### Register alias
+### Commands
+
+#### Docker
+|Command | Description |  
+|--------|-------------|
+|dcs| docker start |
+|dck| docker stop |
+
+#### kubernet
+|Command | Description |  
+|--------|-------------|
+|kcs| kubectl scale 1 |
+|kck| kubectl scale 0 |
+|kcl| kubectl logs |
+
+#### Command
+|Command | Description |  
+|--------|-------------|
+|isl| run last command |
+
+### Register alias
 
 #### Temporary
     export ISH_RUN_SCRIPTS=<Script folder>
