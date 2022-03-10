@@ -133,11 +133,12 @@ def main(command):
     show_list(enumerated_list, alignments)
 
     while True:
-        selection = -1
         print(runner_config["task"])
-        input1 = input("Select entry: ").strip()
+        input1 = input("Select entry (0): ").strip()
         if len(input1) > 0:
             selection = int(input1)
+        else:
+            selection = 0
 
         if 0 <= selection < len(filtered):
             run_command(filtered[selection], runner_config['run_cmd'])

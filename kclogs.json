@@ -33,6 +33,7 @@
     "cmd_fmt": [
       "kubectl",
       "logs",
+      "-f",
       {
         "type": "param",
         "param": 0
